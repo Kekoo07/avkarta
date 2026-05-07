@@ -1,0 +1,455 @@
+/* ============================================================
+   AvKarta — Plataforma Deportiva Bogotá
+   CSS Principal | Autor: Sergio Andrés Romero Castiblanco
+   Estilo: Deportivo Intenso — Rojo y Negro
+   ============================================================ */
+
+/* ─── Variables CSS ──────────────────────────────────────── */
+:root {
+  --rojo:        #e8001c;
+  --rojo-oscuro: #b0001a;
+  --rojo-dim:    rgba(232, 0, 28, 0.12);
+  --rojo-glow:   rgba(232, 0, 28, 0.25);
+  --negro:       #080a0c;
+  --negro2:      #0f1215;
+  --negro3:      #161b20;
+  --negro4:      #1e252c;
+  --borde:       rgba(255,255,255,0.07);
+  --borde-rojo:  rgba(232,0,28,0.3);
+  --texto:       #f0f2f5;
+  --muted:       #7a8799;
+  --blanco:      #ffffff;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+  --radio:    10px;
+  --radio-lg: 16px;
+  --nav-h:    70px;
+  --trans:    0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--negro); color: var(--texto);
+  font-family: var(--font-body); font-size: 16px;
+  line-height: 1.6; overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a   { text-decoration: none; color: inherit; }
+ul  { list-style: none; }
+
+/* ─── Tipografía ─────────────────────────────────────────── */
+h1 { font-family:var(--font-display); font-size:clamp(2.8rem,8vw,6rem); font-weight:800; line-height:.95; letter-spacing:-.01em; text-transform:uppercase; }
+h2 { font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:700; line-height:1; text-transform:uppercase; letter-spacing:.01em; }
+h3 { font-family:var(--font-display); font-size:clamp(1.1rem,2.5vw,1.5rem); font-weight:700; text-transform:uppercase; }
+h4 { font-family:var(--font-display); font-size:1rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+p  { color:var(--muted); }
+
+/* ─── Utilidades ─────────────────────────────────────────── */
+.container { max-width:1200px; margin:0 auto; padding:0 24px; }
+
+.tag {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--font-display); font-size:.7rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.15em;
+  color:var(--rojo); background:var(--rojo-dim);
+  border:1px solid var(--borde-rojo); border-radius:4px; padding:4px 10px;
+}
+.tag::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--rojo); animation:parpadeo 1.5s infinite; }
+@keyframes parpadeo { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.highlight { color:var(--rojo); }
+
+.btn {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:13px 26px; border-radius:6px;
+  font-family:var(--font-display); font-size:.95rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.08em;
+  cursor:pointer; border:none; transition:var(--trans);
+}
+.btn-rojo {
+  background:var(--rojo); color:#fff;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+}
+.btn-rojo:hover { background:#ff1a33; transform:translateY(-2px); box-shadow:0 8px 28px var(--rojo-glow); }
+.btn-outline {
+  background:transparent; color:var(--texto); border:1.5px solid var(--borde);
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+}
+.btn-outline:hover { border-color:var(--rojo); color:var(--rojo); }
+
+.seccion-label {
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--font-display); font-size:.72rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.2em; color:var(--rojo); margin-bottom:14px;
+}
+.seccion-label::before { content:''; width:28px; height:2px; background:var(--rojo); }
+
+.seccion-header { text-align:center; margin-bottom:56px; }
+.seccion-header .seccion-label { justify-content:center; }
+.seccion-header p { max-width:520px; margin:12px auto 0; }
+
+.fade-in { opacity:0; transform:translateY(20px); transition:opacity .6s ease,transform .6s ease; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+/* ─── HEADER / NAV ───────────────────────────────────────── */
+header {
+  position:fixed; top:0; left:0; right:0; height:var(--nav-h); z-index:1000;
+  background:rgba(8,10,12,.92); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--borde); transition:var(--trans);
+}
+header.scrolled { background:rgba(8,10,12,.99); box-shadow:0 4px 32px rgba(0,0,0,.6); }
+
+nav { height:100%; display:flex; align-items:center; justify-content:space-between; }
+
+.nav-logo {
+  font-family:var(--font-display); font-weight:800; font-size:1.7rem;
+  text-transform:uppercase; letter-spacing:.05em; color:var(--texto);
+  display:flex; align-items:center; gap:4px;
+}
+.nav-logo span { color:var(--rojo); }
+.nav-logo .dot { width:8px; height:8px; border-radius:50%; background:var(--rojo); margin-left:2px; animation:parpadeo 1.5s infinite; }
+
+.nav-links { display:flex; align-items:center; gap:28px; }
+.nav-links a {
+  font-family:var(--font-display); font-size:.82rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.1em; color:var(--muted);
+  transition:var(--trans); position:relative;
+}
+.nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px; background:var(--rojo); transition:var(--trans); }
+.nav-links a:hover,.nav-links a.active { color:var(--texto); }
+.nav-links a:hover::after,.nav-links a.active::after { width:100%; }
+
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+.hamburger span { display:block; width:24px; height:2px; background:var(--texto); border-radius:2px; transition:var(--trans); }
+.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+.mobile-nav {
+  display:none; position:fixed; top:var(--nav-h); left:0; right:0;
+  background:var(--negro2); border-bottom:1px solid var(--borde);
+  padding:24px; flex-direction:column; gap:14px; z-index:999;
+  animation:slideDown .3s ease;
+}
+.mobile-nav.open { display:flex; }
+.mobile-nav a {
+  font-family:var(--font-display); font-weight:700; font-size:1.1rem;
+  text-transform:uppercase; letter-spacing:.1em;
+  color:var(--muted); padding:10px 0; border-bottom:1px solid var(--borde); transition:var(--trans);
+}
+.mobile-nav a:hover { color:var(--rojo); }
+@keyframes slideDown { from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.hero {
+  min-height:100vh; display:flex; align-items:center;
+  padding-top:var(--nav-h); position:relative; overflow:hidden;
+}
+.hero-bg {
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 65% 50%,rgba(232,0,28,.08) 0%,transparent 70%),
+    repeating-linear-gradient(-55deg,transparent 0,transparent 40px,rgba(255,255,255,.012) 40px,rgba(255,255,255,.012) 41px);
+}
+.hero-content { position:relative; z-index:1; padding:80px 0; }
+.hero-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+
+.hero-eyebrow { margin-bottom:20px; animation:fadeInUp .5s ease both; }
+.hero-title { margin-bottom:24px; animation:fadeInUp .5s .1s ease both; }
+.hero-title em { font-style:normal; color:var(--rojo); display:block; }
+.hero-desc { font-size:1.05rem; line-height:1.75; margin-bottom:36px; max-width:460px; animation:fadeInUp .5s .2s ease both; }
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; animation:fadeInUp .5s .3s ease both; }
+.hero-stats { display:flex; gap:36px; margin-top:48px; padding-top:36px; border-top:1px solid var(--borde); animation:fadeInUp .5s .4s ease both; }
+.stat h3 { font-family:var(--font-display); font-size:2.2rem; font-weight:800; color:var(--rojo); line-height:1; }
+.stat p { font-size:.8rem; margin-top:4px; }
+
+/* Panel visual hero */
+.hero-panel { animation:fadeInRight .7s .2s ease both; }
+.sports-showcase {
+  background:var(--negro3); border:1px solid var(--borde);
+  border-radius:var(--radio-lg); overflow:hidden; position:relative;
+}
+.sports-showcase::before { content:''; position:absolute; top:0;left:0;right:0;height:3px; background:linear-gradient(90deg,var(--rojo),#ff6b35,var(--rojo)); }
+.showcase-header { display:flex; align-items:center; justify-content:space-between; padding:18px 24px; border-bottom:1px solid var(--borde); }
+.showcase-header h4 { color:var(--texto); font-size:.75rem; }
+
+.sports-grid-mini { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--borde); }
+.sport-mini { background:var(--negro3); padding:20px 12px; text-align:center; transition:var(--trans); }
+.sport-mini:hover { background:var(--negro4); }
+.sport-mini .emoji { font-size:1.8rem; margin-bottom:8px; }
+.sport-mini .nombre { font-family:var(--font-display); font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.sport-mini.destacado { background:var(--rojo-dim); }
+.sport-mini.destacado .nombre { color:var(--rojo); }
+
+.showcase-footer { padding:16px 24px; display:flex; align-items:center; justify-content:space-between; }
+.showcase-footer p { font-size:.8rem; }
+.showcase-footer a { font-family:var(--font-display); font-size:.8rem; font-weight:700; text-transform:uppercase; color:var(--rojo); letter-spacing:.08em; transition:var(--trans); }
+.showcase-footer a:hover { letter-spacing:.14em; }
+
+/* ─── NAV SECCIONES (sticky) ─────────────────────────────── */
+.seccion-nav {
+  background:var(--negro2); border-top:1px solid var(--borde); border-bottom:1px solid var(--borde);
+  position:sticky; top:var(--nav-h); z-index:900;
+}
+.seccion-tabs { display:flex; overflow-x:auto; scrollbar-width:none; }
+.seccion-tabs::-webkit-scrollbar { display:none; }
+.seccion-tab {
+  display:flex; align-items:center; gap:8px; padding:18px 28px;
+  font-family:var(--font-display); font-size:.85rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.1em; color:var(--muted);
+  border-bottom:3px solid transparent; transition:var(--trans);
+  white-space:nowrap; cursor:pointer; background:none; border-top:none; border-left:none; border-right:none;
+}
+.seccion-tab:hover { color:var(--texto); }
+.seccion-tab.activo { color:var(--rojo); border-bottom-color:var(--rojo); }
+
+/* ─── SECCIÓN: ACADEMIAS ─────────────────────────────────── */
+#academias { padding:100px 0; background:var(--negro); }
+
+.filtros { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px; justify-content:center; }
+.filtro-btn {
+  font-family:var(--font-display); font-size:.75rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.1em; padding:8px 18px; border-radius:4px;
+  border:1.5px solid var(--borde); background:transparent; color:var(--muted); cursor:pointer; transition:var(--trans);
+}
+.filtro-btn:hover,.filtro-btn.activo { border-color:var(--rojo); color:var(--rojo); background:var(--rojo-dim); }
+
+.academias-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+
+.academia-card {
+  background:var(--negro3); border:1px solid var(--borde);
+  border-radius:var(--radio-lg); overflow:hidden; transition:var(--trans);
+  display:flex; flex-direction:column;
+}
+.academia-card:hover { border-color:var(--borde-rojo); transform:translateY(-6px); box-shadow:0 20px 60px rgba(0,0,0,.5); }
+
+.academia-img {
+  height:160px; background:var(--negro4); display:flex; align-items:center;
+  justify-content:center; font-size:3.5rem; position:relative; overflow:hidden;
+}
+.academia-img::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 50%,rgba(8,10,12,.8) 100%); }
+.academia-sport-tag {
+  position:absolute; top:12px; left:12px; z-index:1;
+  font-family:var(--font-display); font-size:.65rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.1em;
+  background:var(--rojo); color:#fff; padding:3px 10px; border-radius:4px;
+}
+
+.academia-body { padding:22px; flex:1; display:flex; flex-direction:column; }
+.academia-body h3 { color:var(--texto); margin-bottom:6px; font-size:1.1rem; }
+.academia-body .ubicacion { font-size:.82rem; margin-bottom:14px; display:flex; align-items:center; gap:5px; }
+.academia-body .desc { font-size:.87rem; line-height:1.6; margin-bottom:16px; flex:1; }
+
+.academia-precio {
+  background:var(--negro4); border-radius:8px; padding:14px 16px;
+  display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;
+}
+.academia-precio .precio-label { font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-family:var(--font-display); font-weight:700; }
+.academia-precio .precio-valor { font-family:var(--font-display); font-size:1.3rem; font-weight:800; color:var(--rojo); }
+.academia-precio .precio-periodo { font-size:.72rem; color:var(--muted); }
+
+.academia-tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px; }
+.academia-tag {
+  font-size:.68rem; font-family:var(--font-display); font-weight:700;
+  text-transform:uppercase; letter-spacing:.06em;
+  padding:3px 8px; border-radius:4px;
+  background:var(--negro4); color:var(--muted); border:1px solid var(--borde);
+}
+
+.btn-academia {
+  width:100%; justify-content:center; font-family:var(--font-display); font-size:.8rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.1em;
+  padding:11px; border-radius:6px; border:1.5px solid var(--borde-rojo);
+  background:transparent; color:var(--rojo); cursor:pointer; transition:var(--trans); display:flex; align-items:center;
+}
+.btn-academia:hover { background:var(--rojo); color:#fff; }
+
+.publicar-banner {
+  background:linear-gradient(135deg,var(--negro3),var(--negro4));
+  border:2px dashed var(--borde-rojo); border-radius:var(--radio-lg);
+  padding:40px; text-align:center; margin-top:40px;
+}
+.publicar-banner h3 { color:var(--texto); margin-bottom:10px; }
+.publicar-banner p { margin-bottom:24px; }
+
+/* ─── SECCIÓN: DEPORTES ──────────────────────────────────── */
+#deportes { padding:100px 0; background:var(--negro2); }
+
+.deportes-grid { display:grid; grid-template-columns:repeat(6,1fr); gap:16px; }
+
+.deporte-card {
+  background:var(--negro3); border:1px solid var(--borde);
+  border-radius:var(--radio); padding:24px 16px; text-align:center;
+  transition:var(--trans); cursor:pointer; position:relative; overflow:hidden;
+}
+.deporte-card::after { content:''; position:absolute; bottom:0;left:0;right:0;height:0; background:var(--rojo); transition:height .3s ease; }
+.deporte-card:hover::after { height:4px; }
+.deporte-card:hover { border-color:var(--borde-rojo); transform:translateY(-4px); }
+.deporte-card .d-emoji { font-size:2.2rem; margin-bottom:12px; }
+.deporte-card .d-nombre { font-family:var(--font-display); font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); transition:var(--trans); }
+.deporte-card:hover .d-nombre { color:var(--rojo); }
+.deporte-card.poco-comun { border-color:rgba(232,0,28,.2); }
+.deporte-card.poco-comun .d-nombre { color:rgba(232,0,28,.7); }
+.poco-comun-badge {
+  position:absolute; top:8px; right:8px;
+  font-size:.55rem; font-family:var(--font-display); font-weight:700;
+  text-transform:uppercase; letter-spacing:.06em;
+  background:var(--rojo); color:#fff; padding:2px 6px; border-radius:3px;
+}
+
+/* ─── SECCIÓN: MERCH / TIENDAS ───────────────────────────── */
+#merch { padding:100px 0; background:var(--negro); }
+
+.merch-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+
+.tienda-card {
+  background:var(--negro3); border:1px solid var(--borde);
+  border-radius:var(--radio-lg); overflow:hidden; transition:var(--trans);
+}
+.tienda-card:hover { border-color:var(--borde-rojo); transform:translateY(-5px); }
+
+.tienda-img {
+  height:200px; background:var(--negro4); display:flex;
+  align-items:center; justify-content:center; font-size:4rem; position:relative;
+}
+.tienda-tipo {
+  position:absolute; bottom:12px; left:12px;
+  font-family:var(--font-display); font-size:.65rem; font-weight:700;
+  text-transform:uppercase; background:var(--negro); color:var(--muted);
+  padding:3px 10px; border-radius:4px; border:1px solid var(--borde);
+}
+
+.tienda-body { padding:22px; }
+.tienda-body h3 { color:var(--texto); margin-bottom:6px; font-size:1rem; }
+.tienda-body .tienda-ubicacion { font-size:.82rem; margin-bottom:12px; }
+.tienda-body .tienda-desc { font-size:.87rem; line-height:1.6; margin-bottom:18px; }
+
+.tienda-specs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
+.tienda-spec {
+  font-size:.7rem; font-family:var(--font-display); font-weight:700;
+  text-transform:uppercase; padding:4px 10px; border-radius:4px;
+  background:var(--negro4); color:var(--muted); border:1px solid var(--borde);
+}
+.tienda-horario { display:flex; align-items:center; gap:8px; font-size:.82rem; color:var(--muted); padding-top:14px; border-top:1px solid var(--borde); }
+.abierto { color:#22c55e; font-family:var(--font-display); font-weight:700; font-size:.75rem; }
+.cerrado { color:#ef4444; font-family:var(--font-display); font-weight:700; font-size:.75rem; }
+
+/* ─── SECCIÓN: COMPETENCIAS ──────────────────────────────── */
+#competencias { padding:100px 0; background:var(--negro2); }
+
+.competencias-layout { display:grid; grid-template-columns:2fr 1fr; gap:40px; }
+.competencias-lista { display:flex; flex-direction:column; gap:20px; }
+
+.competencia-card {
+  background:var(--negro3); border:1px solid var(--borde);
+  border-radius:var(--radio-lg); padding:24px; display:flex; gap:20px;
+  transition:var(--trans); align-items:flex-start;
+}
+.competencia-card:hover { border-color:var(--borde-rojo); }
+
+.comp-fecha {
+  background:var(--rojo); color:#fff; border-radius:8px;
+  padding:10px 14px; text-align:center; flex-shrink:0; min-width:58px;
+}
+.comp-fecha .dia { font-family:var(--font-display); font-size:1.6rem; font-weight:800; line-height:1; }
+.comp-fecha .mes { font-family:var(--font-display); font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+
+.comp-info { flex:1; }
+.comp-info h3 { color:var(--texto); margin-bottom:6px; font-size:1rem; }
+.comp-info .comp-deporte { font-family:var(--font-display); font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--rojo); margin-bottom:8px; }
+.comp-info .comp-desc { font-size:.87rem; line-height:1.6; margin-bottom:12px; }
+.comp-meta { display:flex; gap:16px; flex-wrap:wrap; }
+.comp-meta-item { display:flex; align-items:center; gap:5px; font-size:.8rem; color:var(--muted); }
+.comp-estado { font-family:var(--font-display); font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; padding:3px 10px; border-radius:4px; }
+.estado-abierto { background:rgba(34,197,94,.12); color:#22c55e; border:1px solid rgba(34,197,94,.2); }
+.estado-pronto  { background:rgba(250,204,21,.12); color:#facc15; border:1px solid rgba(250,204,21,.2); }
+.estado-lleno   { background:rgba(239,68,68,.12);  color:#ef4444;  border:1px solid rgba(239,68,68,.2); }
+
+/* Sidebar formulario torneo */
+.publicar-torneo {
+  background:var(--negro3); border:1px solid var(--borde);
+  border-radius:var(--radio-lg); padding:32px; height:fit-content;
+  position:sticky; top:calc(var(--nav-h) + 72px);
+}
+.publicar-torneo h3 { color:var(--texto); margin-bottom:12px; }
+.publicar-torneo > p { font-size:.88rem; margin-bottom:24px; line-height:1.7; }
+
+.form-torneo { display:flex; flex-direction:column; gap:14px; }
+.form-torneo input,.form-torneo select,.form-torneo textarea {
+  width:100%; background:var(--negro4); border:1.5px solid var(--borde);
+  border-radius:6px; padding:11px 14px; color:var(--texto);
+  font-family:var(--font-body); font-size:.88rem; outline:none; transition:var(--trans);
+  appearance:none; -webkit-appearance:none;
+}
+.form-torneo input::placeholder,.form-torneo textarea::placeholder { color:rgba(122,135,153,.5); }
+.form-torneo input:focus,.form-torneo select:focus,.form-torneo textarea:focus {
+  border-color:var(--rojo); box-shadow:0 0 0 3px var(--rojo-dim);
+}
+.form-torneo select {
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%237a8799' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 12px center; background-size:16px; cursor:pointer;
+}
+.form-torneo select option { background:var(--negro2); }
+.form-torneo textarea { resize:vertical; min-height:90px; }
+.form-torneo .btn-rojo { width:100%; justify-content:center; border:none; }
+.form-success-msg { display:none; text-align:center; padding:20px 0; }
+.form-success-msg p { color:var(--texto); font-family:var(--font-display); font-size:1rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+
+/* ─── FOOTER ─────────────────────────────────────────────── */
+footer { background:var(--negro2); border-top:1px solid var(--borde); padding:64px 0 32px; }
+
+.footer-top { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:48px; }
+.footer-brand .nav-logo { margin-bottom:14px; display:block; font-size:1.4rem; }
+.footer-brand p { font-size:.88rem; line-height:1.7; max-width:260px; }
+.footer-brand .contacto-info { margin-top:20px; display:flex; flex-direction:column; gap:8px; }
+.footer-brand .contacto-info a,.footer-brand .contacto-info p { font-size:.84rem; color:var(--muted); transition:var(--trans); }
+.footer-brand .contacto-info a:hover { color:var(--rojo); }
+.footer-brand .dev-credit { margin-top:16px; font-size:.72rem; color:rgba(122,135,153,.45); font-family:var(--font-display); letter-spacing:.08em; text-transform:uppercase; }
+
+.footer-col h4 { font-size:.72rem; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-bottom:18px; }
+.footer-col ul { display:flex; flex-direction:column; gap:10px; }
+.footer-col ul li a { font-size:.88rem; color:var(--muted); transition:var(--trans); }
+.footer-col ul li a:hover { color:var(--rojo); }
+
+.footer-bottom { display:flex; align-items:center; justify-content:space-between; padding-top:28px; border-top:1px solid var(--borde); font-size:.82rem; color:var(--muted); }
+.social-links { display:flex; gap:10px; }
+.social-links a {
+  width:36px; height:36px; border-radius:6px; background:var(--negro3);
+  border:1px solid var(--borde); display:flex; align-items:center; justify-content:center;
+  font-size:.9rem; transition:var(--trans);
+}
+.social-links a:hover { border-color:var(--rojo); color:var(--rojo); transform:translateY(-2px); }
+
+/* ─── Animaciones ────────────────────────────────────────── */
+@keyframes fadeInUp    { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeInRight { from{opacity:0;transform:translateX(32px)} to{opacity:1;transform:translateX(0)} }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width:1024px) {
+  .deportes-grid        { grid-template-columns:repeat(4,1fr); }
+  .competencias-layout  { grid-template-columns:1fr; }
+  .publicar-torneo      { position:static; }
+  .footer-top           { grid-template-columns:1fr 1fr; gap:32px; }
+}
+@media (max-width:768px) {
+  .nav-links,nav>.btn-rojo { display:none; }
+  .hamburger    { display:flex; }
+  .hero-grid    { grid-template-columns:1fr; }
+  .hero-panel   { display:none; }
+  .hero-stats   { gap:20px; flex-wrap:wrap; }
+  .academias-grid { grid-template-columns:1fr; }
+  .merch-grid     { grid-template-columns:1fr; }
+  .deportes-grid  { grid-template-columns:repeat(3,1fr); }
+  .seccion-tab  { padding:14px 18px; }
+}
+@media (max-width:480px) {
+  h1 { font-size:2.6rem; }
+  .deportes-grid  { grid-template-columns:repeat(2,1fr); }
+  .footer-top     { grid-template-columns:1fr; }
+  .footer-bottom  { flex-direction:column; gap:14px; text-align:center; }
+  .hero-btns      { flex-direction:column; }
+  .btn            { width:100%; justify-content:center; }
+  .competencia-card { flex-direction:column; }
+}

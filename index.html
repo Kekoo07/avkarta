@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AvKarta — La plataforma deportiva de Bogotá. Academias, tiendas, competencias y deportes menos conocidos en un solo lugar." />
+  <title>AvKarta — Bogotá Deportiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="main-header">
+  <nav class="container">
+    <a href="index.html" class="nav-logo" aria-label="AvKarta inicio">Av<span>Karta</span><div class="dot" aria-hidden="true"></div></a>
+    <ul class="nav-links">
+      <li><a href="#academias">Academias</a></li>
+      <li><a href="#deportes">Deportes</a></li>
+      <li><a href="#merch">Merch</a></li>
+      <li><a href="#competencias">Competencias</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#academias" class="btn btn-rojo" style="display:flex;">Explorar →</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Menú móvil">
+  <a href="#academias">Academias</a>
+  <a href="#deportes">Deportes</a>
+  <a href="#merch">Merch</a>
+  <a href="#competencias">Competencias</a>
+  <a href="#contacto">Contacto</a>
+  <a href="#academias" class="btn btn-rojo" style="margin-top:8px;">Explorar →</a>
+</div>
+
+<main>
+
+<!-- ══════ HERO ══════ -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-content container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow"><span class="tag">Bogotá — Colombia · 2026</span></div>
+        <h1 class="hero-title" id="hero-heading">
+          Tu ciudad
+          <em>más deportiva</em>
+          que nunca
+        </h1>
+        <p class="hero-desc">
+          AvKarta reúne en un solo lugar las academias deportivas, tiendas especializadas
+          y competencias de Bogotá — incluyendo deportes que nunca imaginaste practicar.
+        </p>
+        <div class="hero-btns">
+          <a href="#academias" class="btn btn-rojo">Ver Academias →</a>
+          <a href="#deportes"  class="btn btn-outline">Explorar Deportes</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><h3>+180</h3><p>Academias registradas</p></div>
+          <div class="stat"><h3>40+</h3><p>Deportes disponibles</p></div>
+          <div class="stat"><h3>32</h3><p>Localidades de Bogotá</p></div>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-hidden="true">
+        <div class="sports-showcase">
+          <div class="showcase-header">
+            <h4>Deportes destacados esta semana</h4>
+            <span class="tag">En vivo</span>
+          </div>
+          <div class="sports-grid-mini">
+            <div class="sport-mini destacado"><div class="emoji">🤺</div><div class="nombre">Esgrima</div></div>
+            <div class="sport-mini destacado"><div class="emoji">🏹</div><div class="nombre">Tiro al Arco</div></div>
+            <div class="sport-mini"><div class="emoji">⚽</div><div class="nombre">Fútbol</div></div>
+            <div class="sport-mini"><div class="emoji">🏀</div><div class="nombre">Básquet</div></div>
+            <div class="sport-mini destacado"><div class="emoji">🥋</div><div class="nombre">Judo</div></div>
+            <div class="sport-mini destacado"><div class="emoji">🧗</div><div class="nombre">Escalada</div></div>
+            <div class="sport-mini"><div class="emoji">🏊</div><div class="nombre">Natación</div></div>
+            <div class="sport-mini destacado"><div class="emoji">🎯</div><div class="nombre">Tiro Olímpico</div></div>
+          </div>
+          <div class="showcase-footer">
+            <p>40+ deportes en total</p>
+            <a href="#deportes">Ver todos →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ NAV SECCIONES ══════ -->
+<nav class="seccion-nav" aria-label="Secciones principales">
+  <div class="container">
+    <div class="seccion-tabs" role="tablist">
+      <button class="seccion-tab activo" data-target="academias" role="tab" aria-selected="true"><span class="ico">🏫</span> Academias</button>
+      <button class="seccion-tab" data-target="deportes"    role="tab" aria-selected="false"><span class="ico">🏅</span> Deportes</button>
+      <button class="seccion-tab" data-target="merch"       role="tab" aria-selected="false"><span class="ico">👕</span> Merch &amp; Tiendas</button>
+      <button class="seccion-tab" data-target="competencias" role="tab" aria-selected="false"><span class="ico">🏆</span> Competencias</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════ ACADEMIAS ══════ -->
+<section id="academias" aria-labelledby="academias-heading">
+  <div class="container">
+    <header class="seccion-header fade-in">
+      <span class="seccion-label">Entrena en Bogotá</span>
+      <h2 id="academias-heading">Academias <span class="highlight">para todos los deportes</span></h2>
+      <p>Encuentra el lugar perfecto para empezar o llevar tu deporte al siguiente nivel.</p>
+    </header>
+
+    <div class="filtros" role="group" aria-label="Filtrar academias por deporte">
+      <button class="filtro-btn activo" data-filtro="todos">Todos</button>
+      <button class="filtro-btn" data-filtro="esgrima">🤺 Esgrima</button>
+      <button class="filtro-btn" data-filtro="arco">🏹 Tiro al Arco</button>
+      <button class="filtro-btn" data-filtro="escalada">🧗 Escalada</button>
+      <button class="filtro-btn" data-filtro="judo">🥋 Judo</button>
+      <button class="filtro-btn" data-filtro="natacion">🏊 Natación</button>
+      <button class="filtro-btn" data-filtro="futbol">⚽ Fútbol</button>
+      <button class="filtro-btn" data-filtro="basket">🏀 Básquet</button>
+    </div>
+
+    <div class="academias-grid">
+
+      <article class="academia-card fade-in" data-deporte="esgrima">
+        <div class="academia-img" role="img" aria-label="Academia de esgrima">🤺<span class="academia-sport-tag">Esgrima</span></div>
+        <div class="academia-body">
+          <h3>Club de Esgrima Bogotá Elite</h3>
+          <p class="ubicacion">📍 Chapinero · Cra. 13 #62-45</p>
+          <p class="desc">Academia oficial con entrenadores certificados por la Federación Colombiana. Modalidades florete, espada y sable para todas las edades.</p>
+          <div class="academia-precio">
+            <div><div class="precio-label">Mensualidad</div><div class="precio-periodo">Equipamiento básico incluido</div></div>
+            <div style="text-align:right;"><div class="precio-valor">$180.000</div><div class="precio-periodo">COP / mes</div></div>
+          </div>
+          <div class="academia-tags">
+            <span class="academia-tag">Principiantes</span>
+            <span class="academia-tag">Competitivo</span>
+            <span class="academia-tag">+8 años</span>
+          </div>
+          <button class="btn-academia">Ver más info →</button>
+        </div>
+      </article>
+
+      <article class="academia-card fade-in" data-deporte="arco">
+        <div class="academia-img" role="img" aria-label="Academia de tiro al arco">🏹<span class="academia-sport-tag">Tiro al Arco</span></div>
+        <div class="academia-body">
+          <h3>Archery Bogotá Academy</h3>
+          <p class="ubicacion">📍 Usaquén · Cra. 7 #128-60</p>
+          <p class="desc">Única academia especializada en tiro al arco olímpico y recurvo en Bogotá. Instalaciones de 30m con dianas profesionales certificadas.</p>
+          <div class="academia-precio">
+            <div><div class="precio-label">Mensualidad</div><div class="precio-periodo">2 sesiones por semana</div></div>
+            <div style="text-align:right;"><div class="precio-valor">$220.000</div><div class="precio-periodo">COP / mes</div></div>
+          </div>
+          <div class="academia-tags">
+            <span class="academia-tag">Todas las edades</span>
+            <span class="academia-tag">Olímpico</span>
+            <span class="academia-tag">Recurvo</span>
+          </div>
+          <button class="btn-academia">Ver más info →</button>
+        </div>
+      </article>
+
+      <article class="academia-card fade-in" data-deporte="escalada">
+        <div class="academia-img" role="img" aria-label="Academia de escalada">🧗<span class="academia-sport-tag">Escalada</span></div>
+        <div class="academia-body">
+          <h3>Vertical Climb Center</h3>
+          <p class="ubicacion">📍 Teusaquillo · Av. 26 #29-51</p>
+          <p class="desc">Muro de escalada indoor de 15m con rutas para todos los niveles. Boulder, deportiva y top rope. Alquiler de equipo disponible en sitio.</p>
+          <div class="academia-precio">
+            <div><div class="precio-label">Plan mensual</div><div class="precio-periodo">Acceso ilimitado</div></div>
+            <div style="text-align:right;"><div class="precio-valor">$280.000</div><div class="precio-periodo">COP / mes</div></div>
+          </div>
+          <div class="academia-tags">
+            <span class="academia-tag">Boulder</span>
+            <span class="academia-tag">Deportiva</span>
+            <span class="academia-tag">Top Rope</span>
+          </div>
+          <button class="btn-academia">Ver más info →</button>
+        </div>
+      </article>
+
+      <article class="academia-card fade-in" data-deporte="judo">
+        <div class="academia-img" role="img" aria-label="Academia de judo">🥋<span class="academia-sport-tag">Judo</span></div>
+        <div class="academia-body">
+          <h3>Dojo Kodokan Bogotá</h3>
+          <p class="ubicacion">📍 Fontibón · Cra. 100 #17-85</p>
+          <p class="desc">Academia de judo con 20 años de trayectoria. Sensei con cinturón negro dan 5. Programa infantil, juvenil y adultos en tatamis homologados.</p>
+          <div class="academia-precio">
+            <div><div class="precio-label">Mensualidad</div><div class="precio-periodo">3 clases semanales</div></div>
+            <div style="text-align:right;"><div class="precio-valor">$150.000</div><div class="precio-periodo">COP / mes</div></div>
+          </div>
+          <div class="academia-tags">
+            <span class="academia-tag">Desde 5 años</span>
+            <span class="academia-tag">Competitivo</span>
+            <span class="academia-tag">Uniforme incluido</span>
+          </div>
+          <button class="btn-academia">Ver más info →</button>
+        </div>
+      </article>
+
+      <article class="academia-card fade-in" data-deporte="natacion">
+        <div class="academia-img" role="img" aria-label="Academia de natación">🏊<span class="academia-sport-tag">Natación</span></div>
+        <div class="academia-body">
+          <h3>AquaSpeed Bogotá</h3>
+          <p class="ubicacion">📍 Kennedy · Cll. 45 Sur #80-20</p>
+          <p class="desc">Piscina semiolímpica de 25m temperada. Clases para bebés desde 6 meses, niños y adultos. Entrenadores titulados por Coldeportes.</p>
+          <div class="academia-precio">
+            <div><div class="precio-label">Mensualidad</div><div class="precio-periodo">4 clases por semana</div></div>
+            <div style="text-align:right;"><div class="precio-valor">$200.000</div><div class="precio-periodo">COP / mes</div></div>
+          </div>
+          <div class="academia-tags">
+            <span class="academia-tag">Bebés</span>
+            <span class="academia-tag">Adultos</span>
+            <span class="academia-tag">25m temperada</span>
+          </div>
+          <button class="btn-academia">Ver más info →</button>
+        </div>
+      </article>
+
+      <article class="academia-card fade-in" data-deporte="futbol">
+        <div class="academia-img" role="img" aria-label="Academia de fútbol">⚽<span class="academia-sport-tag">Fútbol</span></div>
+        <div class="academia-body">
+          <h3>Academia Fútbol Norte Bogotá</h3>
+          <p class="ubicacion">📍 Suba · Cra. 58 #139-10</p>
+          <p class="desc">Formación deportiva integral con metodología FIFA. Categorías sub-6 a mayores. Campo de grama natural certificada en norte de Bogotá.</p>
+          <div class="academia-precio">
+            <div><div class="precio-label">Mensualidad</div><div class="precio-periodo">3 entrenamientos / semana</div></div>
+            <div style="text-align:right;"><div class="precio-valor">$130.000</div><div class="precio-periodo">COP / mes</div></div>
+          </div>
+          <div class="academia-tags">
+            <span class="academia-tag">Sub-6 a Mayores</span>
+            <span class="academia-tag">Grama natural</span>
+            <span class="academia-tag">Metodología FIFA</span>
+          </div>
+          <button class="btn-academia">Ver más info →</button>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="publicar-banner fade-in">
+      <h3>¿Tienes una academia deportiva?</h3>
+      <p>Publícala en AvKarta gratis y llega a miles de bogotanos que buscan entrenar.</p>
+      <a href="#contacto" class="btn btn-rojo">Publicar mi academia →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ DEPORTES ══════ -->
+<section id="deportes" aria-labelledby="deportes-heading">
+  <div class="container">
+    <header class="seccion-header fade-in">
+      <span class="seccion-label">Bogotá tiene de todo</span>
+      <h2 id="deportes-heading">Más allá del <span class="highlight">fútbol y el básquet</span></h2>
+      <p>Los deportes marcados en rojo son poco conocidos y necesitan más atletas en la ciudad. ¡Anímate a intentarlos!</p>
+    </header>
+
+    <div class="deportes-grid">
+      <!-- Comunes -->
+      <div class="deporte-card fade-in"><div class="d-emoji">⚽</div><div class="d-nombre">Fútbol</div></div>
+      <div class="deporte-card fade-in"><div class="d-emoji">🏀</div><div class="d-nombre">Básquet</div></div>
+      <div class="deporte-card fade-in"><div class="d-emoji">🏐</div><div class="d-nombre">Voleibol</div></div>
+      <div class="deporte-card fade-in"><div class="d-emoji">🎾</div><div class="d-nombre">Tenis</div></div>
+      <div class="deporte-card fade-in"><div class="d-emoji">🏊</div><div class="d-nombre">Natación</div></div>
+      <div class="deporte-card fade-in"><div class="d-emoji">🥊</div><div class="d-nombre">Boxeo</div></div>
+      <!-- Poco comunes -->
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🤺</div><div class="d-nombre">Esgrima</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🏹</div><div class="d-nombre">Tiro al Arco</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🧗</div><div class="d-nombre">Escalada</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🎯</div><div class="d-nombre">Tiro Olímpico</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🤼</div><div class="d-nombre">Lucha</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🏇</div><div class="d-nombre">Equitación</div></div>
+      <!-- Más -->
+      <div class="deporte-card fade-in"><div class="d-emoji">🥋</div><div class="d-nombre">Judo</div></div>
+      <div class="deporte-card fade-in"><div class="d-emoji">🤸</div><div class="d-nombre">Gimnasia</div></div>
+      <div class="deporte-card fade-in"><div class="d-emoji">🚴</div><div class="d-nombre">Ciclismo</div></div>
+      <div class="deporte-card fade-in"><div class="d-emoji">🏋️</div><div class="d-nombre">Halterofilia</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🤿</div><div class="d-nombre">Buceo</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🛹</div><div class="d-nombre">Skateboard</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🎽</div><div class="d-nombre">Pentatlón</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🏑</div><div class="d-nombre">Hockey Pasto</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🚣</div><div class="d-nombre">Remo</div></div>
+      <div class="deporte-card poco-comun fade-in"><span class="poco-comun-badge">Único</span><div class="d-emoji">🏄</div><div class="d-nombre">Canotaje</div></div>
+      <div class="deporte-card fade-in"><div class="d-emoji">⛹️</div><div class="d-nombre">Atletismo</div></div>
+      <div class="deporte-card fade-in"><div class="d-emoji">🤾</div><div class="d-nombre">Balonmano</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ MERCH ══════ -->
+<section id="merch" aria-labelledby="merch-heading">
+  <div class="container">
+    <header class="seccion-header fade-in">
+      <span class="seccion-label">Implementos &amp; Ropa</span>
+      <h2 id="merch-heading">Tiendas deportivas <span class="highlight">especializadas</span></h2>
+      <p>Equípate con lo mejor. Tiendas con implementos para todos los deportes, desde los más populares hasta los más especializados.</p>
+    </header>
+
+    <div class="merch-grid">
+
+      <article class="tienda-card fade-in">
+        <div class="tienda-img" role="img" aria-label="Tienda de esgrima">⚔️<span class="tienda-tipo">Artes Marciales · Esgrima</span></div>
+        <div class="tienda-body">
+          <h3>Armería del Esgrimista</h3>
+          <p class="tienda-ubicacion">📍 Centro · Cra. 8 #16-40</p>
+          <p class="tienda-desc">La única tienda especializada en esgrima en Colombia. Floretes, espadas, sables, máscaras FIE y chaquetillas importadas.</p>
+          <div class="tienda-specs">
+            <span class="tienda-spec">Florete FIE</span><span class="tienda-spec">Máscaras</span>
+            <span class="tienda-spec">Chaquetillas</span><span class="tienda-spec">Importado</span>
+          </div>
+          <div class="tienda-horario"><span class="abierto">● Abierto</span> Lun–Sáb 9am–7pm</div>
+        </div>
+      </article>
+
+      <article class="tienda-card fade-in">
+        <div class="tienda-img" role="img" aria-label="Tienda de escalada y aventura">🏔️<span class="tienda-tipo">Aventura · Escalada</span></div>
+        <div class="tienda-body">
+          <h3>Cumbre Outdoor Store</h3>
+          <p class="tienda-ubicacion">📍 Chapinero · Cll. 63 #13-36</p>
+          <p class="tienda-desc">Equipos de escalada, senderismo y deportes de montaña. Arneses, cuerdas, pies de gato. Marcas: Black Diamond, Petzl, La Sportiva.</p>
+          <div class="tienda-specs">
+            <span class="tienda-spec">Escalada</span><span class="tienda-spec">Senderismo</span>
+            <span class="tienda-spec">Black Diamond</span><span class="tienda-spec">Petzl</span>
+          </div>
+          <div class="tienda-horario"><span class="abierto">● Abierto</span> Lun–Dom 10am–8pm</div>
+        </div>
+      </article>
+
+      <article class="tienda-card fade-in">
+        <div class="tienda-img" role="img" aria-label="Tienda de tiro al arco">🏹<span class="tienda-tipo">Tiro al Arco</span></div>
+        <div class="tienda-body">
+          <h3>Arrow Sports Colombia</h3>
+          <p class="tienda-ubicacion">📍 Usaquén · Cra. 6A #121-40</p>
+          <p class="tienda-desc">Distribuidor oficial de arcos recurvos y compuestos para competencia. Flechas de carbono, estabilizadores, mirillas y accesorios de ajuste.</p>
+          <div class="tienda-specs">
+            <span class="tienda-spec">Recurvo</span><span class="tienda-spec">Compuesto</span>
+            <span class="tienda-spec">Hoyt</span><span class="tienda-spec">Easton</span>
+          </div>
+          <div class="tienda-horario"><span class="abierto">● Abierto</span> Mar–Sáb 10am–6pm</div>
+        </div>
+      </article>
+
+      <article class="tienda-card fade-in">
+        <div class="tienda-img" role="img" aria-label="Tienda multimarca de deportes">👟<span class="tienda-tipo">Multideporte · Merch</span></div>
+        <div class="tienda-body">
+          <h3>SportZone Bogotá</h3>
+          <p class="tienda-ubicacion">📍 Salitre · Cll. 26 #68D-35</p>
+          <p class="tienda-desc">Tienda multimarca con la mayor variedad de ropa deportiva en Bogotá. Adidas, Nike, Under Armour, Puma y sección especial para deportes poco comunes.</p>
+          <div class="tienda-specs">
+            <span class="tienda-spec">Nike</span><span class="tienda-spec">Adidas</span>
+            <span class="tienda-spec">Under Armour</span><span class="tienda-spec">Multimarca</span>
+          </div>
+          <div class="tienda-horario"><span class="abierto">● Abierto</span> Lun–Dom 9am–9pm</div>
+        </div>
+      </article>
+
+      <article class="tienda-card fade-in">
+        <div class="tienda-img" role="img" aria-label="Tienda de natación y deportes acuáticos">🏊<span class="tienda-tipo">Acuáticos</span></div>
+        <div class="tienda-body">
+          <h3>AquaShop Colombia</h3>
+          <p class="tienda-ubicacion">📍 Kennedy · Av. 68 #38A-31</p>
+          <p class="tienda-desc">Especialistas en natación. Gafas Speedo, gorros de silicone, aletas, tables de patada, cronómetros y trajes de competencia para todos los niveles.</p>
+          <div class="tienda-specs">
+            <span class="tienda-spec">Speedo</span><span class="tienda-spec">Arena</span>
+            <span class="tienda-spec">Trajes comp.</span><span class="tienda-spec">Accesorios</span>
+          </div>
+          <div class="tienda-horario"><span class="cerrado">● Cerrado</span> Lun–Sáb 9am–6pm</div>
+        </div>
+      </article>
+
+      <article class="tienda-card fade-in">
+        <div class="tienda-img" role="img" aria-label="Tienda de artes marciales y judo">🥋<span class="tienda-tipo">Artes Marciales</span></div>
+        <div class="tienda-body">
+          <h3>Tatami Store</h3>
+          <p class="tienda-ubicacion">📍 Bosa · Cll. 57 Sur #80-15</p>
+          <p class="tienda-desc">Todo para judo, karate y taekwondo. Uniformes homologados, protecciones, cinturones y tatamis de entrenamiento. Marca Mizuno oficial.</p>
+          <div class="tienda-specs">
+            <span class="tienda-spec">Judogis</span><span class="tienda-spec">Tatamis</span>
+            <span class="tienda-spec">Protecciones</span><span class="tienda-spec">Mizuno</span>
+          </div>
+          <div class="tienda-horario"><span class="abierto">● Abierto</span> Lun–Sáb 8am–6pm</div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="publicar-banner fade-in" style="margin-top:40px;">
+      <h3>¿Tienes una tienda deportiva?</h3>
+      <p>Regístrala en AvKarta y llega a atletas de toda Bogotá que buscan implementos especializados.</p>
+      <a href="#contacto" class="btn btn-rojo">Registrar mi tienda →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ COMPETENCIAS ══════ -->
+<section id="competencias" aria-labelledby="comp-heading">
+  <div class="container">
+    <header class="seccion-header fade-in">
+      <span class="seccion-label">Torneos &amp; Eventos</span>
+      <h2 id="comp-heading">Competencias <span class="highlight">en Bogotá</span></h2>
+      <p>Torneos y eventos deportivos abiertos a la comunidad. También puedes publicar el tuyo.</p>
+    </header>
+
+    <div class="competencias-layout">
+
+      <div class="competencias-lista">
+
+        <article class="competencia-card fade-in">
+          <div class="comp-fecha" aria-label="15 de junio"><div class="dia">15</div><div class="mes">Jun</div></div>
+          <div class="comp-info">
+            <div class="comp-deporte">🤺 Esgrima</div>
+            <h3>Torneo Distrital de Esgrima 2024</h3>
+            <p class="comp-desc">Competencia oficial de la Liga de Esgrima de Bogotá. Categorías infantil, juvenil y mayores en florete, espada y sable.</p>
+            <div class="comp-meta">
+              <span class="comp-meta-item">📍 Coliseo El Salitre</span>
+              <span class="comp-meta-item">👥 120 participantes</span>
+              <span class="comp-meta-item">🏆 Premiación en efectivo</span>
+              <span class="comp-estado estado-abierto">Inscripciones abiertas</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="competencia-card fade-in">
+          <div class="comp-fecha" aria-label="22 de junio"><div class="dia">22</div><div class="mes">Jun</div></div>
+          <div class="comp-info">
+            <div class="comp-deporte">🏹 Tiro al Arco</div>
+            <h3>Open de Tiro al Arco Bogotá</h3>
+            <p class="comp-desc">Torneo indoor a 18m. Ramas recurvo y compuesto. Abierto a clubes y arqueros independientes de todo el país.</p>
+            <div class="comp-meta">
+              <span class="comp-meta-item">📍 Parque Simón Bolívar</span>
+              <span class="comp-meta-item">👥 80 participantes</span>
+              <span class="comp-meta-item">💰 Inscripción: $50.000</span>
+              <span class="comp-estado estado-pronto">Próximamente</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="competencia-card fade-in">
+          <div class="comp-fecha" aria-label="8 de julio"><div class="dia">08</div><div class="mes">Jul</div></div>
+          <div class="comp-info">
+            <div class="comp-deporte">🧗 Escalada</div>
+            <h3>Boulder Challenge Bogotá 2024</h3>
+            <p class="comp-desc">Competencia de boulder en formato flash. 20 problemas cronometrados en categorías VB–V5, V6–V9 y open elite.</p>
+            <div class="comp-meta">
+              <span class="comp-meta-item">📍 Vertical Climb Center</span>
+              <span class="comp-meta-item">👥 60 participantes</span>
+              <span class="comp-meta-item">🎽 Camiseta incluida</span>
+              <span class="comp-estado estado-abierto">Inscripciones abiertas</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="competencia-card fade-in">
+          <div class="comp-fecha" aria-label="14 de julio"><div class="dia">14</div><div class="mes">Jul</div></div>
+          <div class="comp-info">
+            <div class="comp-deporte">⚽ Fútbol</div>
+            <h3>Copa AvKarta 5vs5 — Verano 2024</h3>
+            <p class="comp-desc">Torneo relámpago de microfútbol por equipos. 32 equipos, fase de grupos y eliminación directa en cancha sintética techada.</p>
+            <div class="comp-meta">
+              <span class="comp-meta-item">📍 Liga Norte, Suba</span>
+              <span class="comp-meta-item">👥 32 equipos</span>
+              <span class="comp-meta-item">🏆 $2.000.000 en premios</span>
+              <span class="comp-estado estado-lleno">Cupos llenos</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="competencia-card fade-in">
+          <div class="comp-fecha" aria-label="20 de julio"><div class="dia">20</div><div class="mes">Jul</div></div>
+          <div class="comp-info">
+            <div class="comp-deporte">🥋 Judo</div>
+            <h3>Gran Prix Judo — Copa Independencia</h3>
+            <p class="comp-desc">Torneo oficial 20 de julio. Categorías por peso y edad. Clasificatorio para el Nacional Juvenil de Judo 2024.</p>
+            <div class="comp-meta">
+              <span class="comp-meta-item">📍 Centro de Alto Rendimiento</span>
+              <span class="comp-meta-item">👥 200 judokas</span>
+              <span class="comp-meta-item">📋 Clasificatorio Nacional</span>
+              <span class="comp-estado estado-abierto">Inscripciones abiertas</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Sidebar publicar torneo -->
+      <aside class="publicar-torneo fade-in" aria-labelledby="pub-heading">
+        <span class="seccion-label" style="font-size:.65rem;">Organiza tu evento</span>
+        <h3 id="pub-heading">Publica tu torneo o competencia</h3>
+        <p>Comparte tu evento deportivo con la comunidad AvKarta. Es gratis y llega a miles de atletas bogotanos.</p>
+        <form class="form-torneo" id="form-torneo" novalidate aria-label="Formulario para publicar torneo">
+          <input type="text"  id="t-nombre"  placeholder="Nombre del torneo *"      required aria-required="true" />
+          <input type="text"  id="t-deporte" placeholder="Deporte *"                required aria-required="true" />
+          <input type="date"  id="t-fecha"                                           required aria-required="true" aria-label="Fecha del evento" />
+          <input type="text"  id="t-lugar"   placeholder="Lugar / Dirección *"      required aria-required="true" />
+          <input type="text"  id="t-cupos"   placeholder="Nº de cupos disponibles" />
+          <select id="t-tipo" aria-label="Tipo de participación">
+            <option value="" disabled selected>Tipo de participación</option>
+            <option value="gratis">Gratuito</option>
+            <option value="pago">Con inscripción</option>
+            <option value="selectivo">Por selectivo</option>
+          </select>
+          <textarea id="t-desc" placeholder="Descripción del evento *" required aria-required="true"></textarea>
+          <input type="email" id="t-email"  placeholder="Tu correo de contacto *"  required aria-required="true" />
+          <button type="submit" class="btn btn-rojo">Publicar evento →</button>
+        </form>
+        <div class="form-success-msg" id="torneo-success" role="alert" aria-live="polite">
+          <p>✅ Evento enviado para revisión. Te contactaremos en 24 horas.</p>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CONTACTO ══════ -->
+<section id="contacto" style="padding:100px 0;background:var(--negro);" aria-labelledby="contacto-heading">
+  <div class="container">
+    <header class="seccion-header fade-in">
+      <span class="seccion-label">Escríbenos</span>
+      <h2 id="contacto-heading">¿Quieres publicar en <span class="highlight">AvKarta</span>?</h2>
+      <p>Academias, tiendas y organizadores de eventos pueden publicarse. Contáctanos directamente.</p>
+    </header>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;max-width:900px;margin:0 auto;" class="fade-in">
+
+      <div style="display:flex;flex-direction:column;gap:24px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:8px;background:var(--rojo-dim);border:1px solid var(--borde-rojo);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">📞</div>
+          <div>
+            <h4 style="color:var(--texto);margin-bottom:4px;font-size:.8rem;">Celular</h4>
+            <a href="tel:+573222106876" style="color:var(--muted);font-size:.95rem;">+57 322 210 6876</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:8px;background:var(--rojo-dim);border:1px solid var(--borde-rojo);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">📧</div>
+          <div>
+            <h4 style="color:var(--texto);margin-bottom:4px;font-size:.8rem;">Correo</h4>
+            <a href="mailto:sergioromerocas@gmail.com" style="color:var(--muted);font-size:.95rem;">sergioromerocas@gmail.com</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:8px;background:var(--rojo-dim);border:1px solid var(--borde-rojo);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">👤</div>
+          <div>
+            <h4 style="color:var(--texto);margin-bottom:4px;font-size:.8rem;">Desarrollador</h4>
+            <p style="font-size:.95rem;color:var(--muted);">Sergio Andrés Romero Castiblanco</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:48px;height:48px;border-radius:8px;background:var(--rojo-dim);border:1px solid var(--borde-rojo);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;">📍</div>
+          <div>
+            <h4 style="color:var(--texto);margin-bottom:4px;font-size:.8rem;">Ciudad</h4>
+            <p style="font-size:.95rem;color:var(--muted);">Bogotá D.C., Colombia</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--negro3);border:1px solid var(--borde);border-radius:var(--radio-lg);padding:36px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--rojo),#ff6b35,var(--rojo));"></div>
+        <h3 style="color:var(--texto);margin-bottom:20px;font-size:1.1rem;">Enviar mensaje</h3>
+        <form id="form-contacto" style="display:flex;flex-direction:column;gap:14px;" novalidate aria-label="Formulario de contacto">
+          <input type="text"  id="c-nombre" placeholder="Tu nombre completo *" required aria-required="true"
+            style="background:var(--negro4);border:1.5px solid var(--borde);border-radius:6px;padding:11px 14px;color:var(--texto);font-family:var(--font-body);font-size:.88rem;outline:none;width:100%;" />
+          <input type="email" id="c-email" placeholder="Correo electrónico *" required aria-required="true"
+            style="background:var(--negro4);border:1.5px solid var(--borde);border-radius:6px;padding:11px 14px;color:var(--texto);font-family:var(--font-body);font-size:.88rem;outline:none;width:100%;" />
+          <select id="c-tipo" aria-label="Qué quieres publicar"
+            style="background:var(--negro4);border:1.5px solid var(--borde);border-radius:6px;padding:11px 14px;color:var(--texto);font-family:var(--font-body);font-size:.88rem;outline:none;width:100%;appearance:none;cursor:pointer;">
+            <option value="" disabled selected>¿Qué quieres publicar?</option>
+            <option value="academia">Una academia deportiva</option>
+            <option value="tienda">Una tienda / merch</option>
+            <option value="torneo">Un torneo / evento</option>
+            <option value="otro">Otro</option>
+          </select>
+          <textarea id="c-msg" placeholder="Cuéntanos más sobre tu academia, tienda o evento..." required aria-required="true"
+            style="background:var(--negro4);border:1.5px solid var(--borde);border-radius:6px;padding:11px 14px;color:var(--texto);font-family:var(--font-body);font-size:.88rem;outline:none;width:100%;resize:vertical;min-height:100px;"></textarea>
+          <button type="submit" class="btn btn-rojo" style="width:100%;justify-content:center;border:none;" id="btn-contacto">
+            Enviar mensaje →
+          </button>
+          <div id="contacto-success" style="display:none;text-align:center;padding:12px;" role="alert" aria-live="polite">
+            <p style="color:var(--texto);font-family:var(--font-display);font-size:.95rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">✅ ¡Recibido! Te responderemos pronto.</p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">Av<span>Karta</span><div class="dot" aria-hidden="true"></div></a>
+        <p>La plataforma deportiva de Bogotá. Reunimos academias, atletas, tiendas y competencias en un solo lugar para hacer la ciudad más deportiva.</p>
+        <address style="font-style:normal;" class="contacto-info">
+          <a href="tel:+573222106876">📞 +57 322 210 6876</a>
+          <a href="mailto:sergioromerocas@gmail.com">📧 sergioromerocas@gmail.com</a>
+          <p>📍 Bogotá D.C., Colombia</p>
+        </address>
+        <p class="dev-credit">Desarrollado por Sergio Andrés Romero Castiblanco</p>
+      </div>
+      <div class="footer-col">
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="#academias">Academias</a></li>
+          <li><a href="#deportes">Deportes</a></li>
+          <li><a href="#merch">Merch &amp; Tiendas</a></li>
+          <li><a href="#competencias">Competencias</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Publicar</h4>
+        <ul>
+          <li><a href="#contacto">Mi academia</a></li>
+          <li><a href="#contacto">Mi tienda</a></li>
+          <li><a href="#competencias">Mi torneo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Deportes únicos</h4>
+        <ul>
+          <li><a href="#deportes">🤺 Esgrima</a></li>
+          <li><a href="#deportes">🏹 Tiro al Arco</a></li>
+          <li><a href="#deportes">🧗 Escalada</a></li>
+          <li><a href="#deportes">🎯 Tiro Olímpico</a></li>
+          <li><a href="#deportes">🏇 Equitación</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AvKarta · Bogotá Deportiva · Todos los derechos reservados.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram">📸</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="TikTok">♪</a>
+        <a href="#" aria-label="WhatsApp">💬</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileNav.classList.remove('open'); hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', false);
+  }));
+
+  // Tabs sección
+  document.querySelectorAll('.seccion-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.seccion-tab').forEach(t => { t.classList.remove('activo'); t.setAttribute('aria-selected', false); });
+      tab.classList.add('activo'); tab.setAttribute('aria-selected', true);
+      const el = document.getElementById(tab.dataset.target);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Actualizar tab al scroll
+  const secciones = ['academias','deportes','merch','competencias'];
+  window.addEventListener('scroll', () => {
+    let actual = '';
+    secciones.forEach(id => { const s = document.getElementById(id); if (s && window.scrollY >= s.offsetTop - 150) actual = id; });
+    document.querySelectorAll('.seccion-tab').forEach(t => {
+      const ok = t.dataset.target === actual;
+      t.classList.toggle('activo', ok); t.setAttribute('aria-selected', ok);
+    });
+  }, { passive: true });
+
+  // Filtros academias
+  document.querySelectorAll('.filtro-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('activo'));
+      btn.classList.add('activo');
+      const f = btn.dataset.filtro;
+      document.querySelectorAll('.academia-card').forEach(c => {
+        c.style.display = (f === 'todos' || c.dataset.deporte === f) ? 'flex' : 'none';
+      });
+    });
+  });
+
+  // Fade-in
+  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Form torneo
+  document.getElementById('form-torneo').addEventListener('submit', e => {
+    e.preventDefault();
+    if (!document.getElementById('t-nombre').value.trim() || !document.getElementById('t-email').value.trim()) {
+      alert('Por favor completa los campos obligatorios.'); return;
+    }
+    document.getElementById('form-torneo').style.display = 'none';
+    document.getElementById('torneo-success').style.display = 'block';
+  });
+
+  // Form contacto
+  document.getElementById('form-contacto').addEventListener('submit', e => {
+    e.preventDefault();
+    if (!document.getElementById('c-nombre').value.trim() || !document.getElementById('c-email').value.trim()) {
+      alert('Por favor completa los campos obligatorios.'); return;
+    }
+    document.getElementById('btn-contacto').style.display = 'none';
+    document.getElementById('contacto-success').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
