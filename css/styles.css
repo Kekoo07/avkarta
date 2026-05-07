@@ -41,7 +41,7 @@ ul  { list-style: none; }
 
 /* ─── Tipografía ─────────────────────────────────────────── */
 h1 { font-family:var(--font-display); font-size:clamp(2.8rem,8vw,6rem); font-weight:800; line-height:.95; letter-spacing:-.01em; text-transform:uppercase; }
-h2 { font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:700; line-height:1; text-transform:uppercase; letter-spacing:.01em; }
+h2 { font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:700; line-height:1.2; text-transform:uppercase; letter-spacing:.01em; margin-bottom:16px; }
 h3 { font-family:var(--font-display); font-size:clamp(1.1rem,2.5vw,1.5rem); font-weight:700; text-transform:uppercase; }
 h4 { font-family:var(--font-display); font-size:1rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
 p  { color:var(--muted); margin-bottom:1.2rem; line-height:1.7; word-break:break-word; overflow-wrap:break-word; }
@@ -240,7 +240,7 @@ nav { height:100%; display:flex; align-items:center; justify-content:space-betwe
 .academia-body { padding:22px; flex:1; display:flex; flex-direction:column; }
 .academia-body h3 { color:var(--texto); margin-bottom:6px; font-size:1.1rem; }
 .academia-body .ubicacion { font-size:.82rem; margin-bottom:14px; display:flex; align-items:center; gap:5px; }
-.academia-body .desc { font-size:.87rem; line-height:1.6; margin-bottom:16px; flex:1; }
+.academia-body .desc { font-size:.87rem; line-height:1.8; margin-bottom:16px; flex:1; word-break:break-word; overflow-wrap:break-word; }
 
 .academia-precio {
   background:var(--negro4); border-radius:8px; padding:14px 16px;
@@ -324,7 +324,7 @@ nav { height:100%; display:flex; align-items:center; justify-content:space-betwe
 .tienda-body { padding:22px; }
 .tienda-body h3 { color:var(--texto); margin-bottom:6px; font-size:1rem; }
 .tienda-body .tienda-ubicacion { font-size:.82rem; margin-bottom:12px; }
-.tienda-body .tienda-desc { font-size:.87rem; line-height:1.6; margin-bottom:18px; }
+.tienda-body .tienda-desc { font-size:.87rem; line-height:1.8; margin-bottom:18px; word-break:break-word; overflow-wrap:break-word; }
 
 .tienda-specs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; }
 .tienda-spec {
@@ -359,7 +359,7 @@ nav { height:100%; display:flex; align-items:center; justify-content:space-betwe
 .comp-info { flex:1; }
 .comp-info h3 { color:var(--texto); margin-bottom:6px; font-size:1rem; }
 .comp-info .comp-deporte { font-family:var(--font-display); font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--rojo); margin-bottom:8px; }
-.comp-info .comp-desc { font-size:.87rem; line-height:1.6; margin-bottom:12px; }
+.comp-info .comp-desc { font-size:.87rem; line-height:1.8; margin-bottom:12px; word-break:break-word; overflow-wrap:break-word; }
 .comp-meta { display:flex; gap:16px; flex-wrap:wrap; }
 .comp-meta-item { display:flex; align-items:center; gap:5px; font-size:.8rem; color:var(--muted); }
 .comp-estado { font-family:var(--font-display); font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; padding:3px 10px; border-radius:4px; }
@@ -374,7 +374,7 @@ nav { height:100%; display:flex; align-items:center; justify-content:space-betwe
   position:sticky; top:calc(var(--nav-h) + 72px);
 }
 .publicar-torneo h3 { color:var(--texto); margin-bottom:12px; }
-.publicar-torneo > p { font-size:.88rem; margin-bottom:24px; line-height:1.7; }
+.publicar-torneo > p { font-size:.88rem; margin-bottom:24px; line-height:1.8; word-break:break-word; overflow-wrap:break-word; }
 
 .form-torneo { display:flex; flex-direction:column; gap:14px; }
 .form-torneo input,.form-torneo select,.form-torneo textarea {
